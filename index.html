@@ -131,7 +131,7 @@ const CFG = {
     SUPABASE_URL: 'https://ehzkgcoyvmdddowcjdkc.' + 'supabase.co',
     SUPABASE_KEY: 'sb_publishable_5I3ajN6NCnAtsqfVK6uiog_' + 'bcu-1ALT',
     AUTHOR_NAMES: ['7891king'],
-    ADMIN_NAMES: ['7891king','骆真权','8045','带土','谭力玮','丁涛','蒋介石老豆'],
+    ADMIN_NAMES: ['7891king','骆真权','8045','带土','谭力玮','丁涛','狗蛙'],
     INVITES: ['HD2026','haidong','HDND'],
     SITE: '海东内网'
 };
@@ -206,7 +206,7 @@ async upload(file){const ext=(file.name.split('.').pop()||'bin').toLowerCase().s
 };
 
 const S={user:null,page:'feed',tab:'login',posts:[],profiles:{},products:[],users:[],compose:null,prodForm:null,view:null,comments:[],adminQ:'',prodCat:'全部',pending:0};
-const TITLES={'7891king':[{t:'♛ 站主',s:'owner'},{t:'管理员',s:'admin'},{t:'作者',s:'author'},{t:'SSSVIP',s:'svip'}],'骆真权':[{t:'管理员',s:'admin'}],'8045':[{t:'老乐',s:'admin'}],'带土':[{t:'农村人',s:'admin'}],'丁涛':[{t:'玻璃纤维',s:'admin'}],'谭力玮':[{t:'管理员',s:'admin'}],'xujingfeng00':[{t:'实名制上网第一人',s:'svip'}]};
+const TITLES={'7891king':[{t:'♛ 站长',s:'owner'},{t:'管理员',s:'admin'},{t:'作者',s:'author'},{t:'SSSVIP',s:'svip'}],'骆真权':[{t:'管理员',s:'admin'}],'狗蛙':[{t:'老傻子',s:'admin'}],'8045':[{t:'老乐',s:'admin'}],'带土':[{t:'农村人',s:'admin'}],'丁涛':[{t:'玻璃纤维',s:'admin'}],'谭力玮':[{t:'管理员',s:'admin'}],'xujingfeng00':[{t:'实名制上网第一人',s:'svip'}]};
 const rankOf=n=>!n?1:CFG.AUTHOR_NAMES.indexOf(n)>-1?3:CFG.ADMIN_NAMES.indexOf(n)>-1?2:1;
 const myRank=()=>{if(!S.user)return 0;let r=rankOf(S.user.username);if(S.user.role==='admin')r=Math.max(r,2);if(S.user.role==='author')r=Math.max(r,3);if(S.user.status==='banned'||S.user.status==='deleted')return 0;return r};
 const isAdmin=()=>myRank()>=2;
